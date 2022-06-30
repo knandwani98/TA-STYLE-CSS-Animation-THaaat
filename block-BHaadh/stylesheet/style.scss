@@ -1,0 +1,53 @@
+@import "reset";
+
+body {
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+    max-width: 1260px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: #870707;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    border: 10px solid #870707;
+    margin: 0 50px;
+    &-inner {
+        @extend .box;
+        margin: 0;
+        border: none;
+        background-color: bisque;
+        display: grid;
+        place-content: center;
+    }
+}
+
+.twoD {
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    &:hover {
+        background-color: #870707;
+        transform: rotateY(0.5turn);
+    }
+}
+
+.threeD {
+    transform: perspective(300px) rotateX(45deg);
+    // transition: ;
+}
